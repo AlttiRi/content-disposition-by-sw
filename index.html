@@ -7,11 +7,20 @@
 </head>
 <body>
 Note: Due to Chromium's bug it's not possible to correctly set <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMString/Binary">Binary String</a>
-(<a href="https://developer.mozilla.org/en-US/docs/Web/API/ByteString">ByteString</a>) as a header value. Use Firefox for this demo.
+(<a href="https://developer.mozilla.org/en-US/docs/Web/API/ByteString">ByteString</a>) as a header value in Service Worker. Use Firefox for this demo.
+<hr>
+<div>
+    Filename: "123---ファイル---🟦⬜🟥---xxx.txt"
+</div>
 <hr>
 <div>
     <div>
-        attachment; filename=123---ファイル---🟦⬜🟥---xxx.txt
+        <script>
+            document.write(stringToBinaryString(
+                `attachment; filename=123-&#45;&#45;ファイル-&#45;&#45;🟦⬜🟥-&#45;&#45;xxx.txt`
+            ));
+        </script>
+<!--        attachment; filename=123-&#45;&#45;ファイル-&#45;&#45;🟦⬜🟥-&#45;&#45;xxx.txt-->
     </div>
     <button id="button-0" data-url="./xxx-0">Click me to log 0</button>
     <a href="./xxx-0">Click me to download 0</a>
@@ -20,7 +29,12 @@ Note: Due to Chromium's bug it's not possible to correctly set <a href="https://
 <hr>
 <div>
     <div>
-        attachment; filename="123---ファイル---🟦⬜🟥---xxx.txt"
+        <script>
+            document.write(stringToBinaryString(
+                `attachment; filename="123-&#45;&#45;ファイル-&#45;&#45;🟦⬜🟥-&#45;&#45;xxx.txt"`
+            ));
+        </script>
+<!--        attachment; filename="123-&#45;&#45;ファイル-&#45;&#45;🟦⬜🟥-&#45;&#45;xxx.txt"-->
     </div>
     <button id="button-1" data-url="./xxx-1">Click me to log 1</button>
     <a href="./xxx-1">Click me to download 1</a>
@@ -30,7 +44,12 @@ Note: Due to Chromium's bug it's not possible to correctly set <a href="https://
 <div>
     rfc5987
     <div>
-        attachment; filename="123---ファイル---🟦⬜🟥---xxx.txt"; filename*=UTF-8''123---%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB---%F0%9F%9F%A6%E2%AC%9C%F0%9F%9F%A5---xxx.txt
+        <script>
+            document.write(stringToBinaryString(
+                `attachment; filename="123---ファイル---🟦⬜🟥---xxx.txt"; filename*=UTF-8''123---%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB---%F0%9F%9F%A6%E2%AC%9C%F0%9F%9F%A5---xxx.txt`
+            ));
+        </script>
+<!--        attachment; filename="123-&#45;&#45;ファイル-&#45;&#45;🟦⬜🟥-&#45;&#45;xxx.txt"; filename*=UTF-8''123-&#45;&#45;%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB-&#45;&#45;%F0%9F%9F%A6%E2%AC%9C%F0%9F%9F%A5-&#45;&#45;xxx.txt-->
     </div>
     <button id="button-2" data-url="./xxx-2">Click me to log 2</button>
     <a href="./xxx-2">Click me to download 2</a>
