@@ -4,7 +4,6 @@ async function registerSW() {
     } catch (e) {
         console.error(e);
     }
-
 }
 registerSW().then();
 
