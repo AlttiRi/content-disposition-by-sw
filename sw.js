@@ -25,7 +25,7 @@ self.addEventListener("fetch", function(event) {
     if (request.url.includes("xxx-1")) {
         const headers = {
             "content-disposition":
-            stringToBinaryString(`attachment; filename="${filename}";`)
+            stringToBinaryString(`attachment; filename="${filename}"`)
         }
         console.log(byteStringToString(headers["content-disposition"]));
         event.respondWith(new Response("xxx-2", {headers}));
