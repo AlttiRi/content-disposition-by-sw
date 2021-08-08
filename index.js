@@ -81,8 +81,3 @@ function stringToBinaryString(str) {
 function arrayBufferToBinaryString(arrayBuffer) {
     return arrayBuffer.reduce((accumulator, byte) => accumulator + String.fromCharCode(byte), "");
 }
-function byteStringToString(byteString) {
-    const chars = [...byteString];
-    const bytes = new Uint8Array(chars.map(ch => ch.charCodeAt(0)));
-    return new TextDecoder().decode(bytes);
-}
