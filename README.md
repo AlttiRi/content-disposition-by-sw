@@ -9,4 +9,4 @@ to `./xxx-0`, `./xxx-1`, `./xxx-2` URLs.
 Note: Due to Chromium's bug it's not possible to correctly set [Binary String](https://developer.mozilla.org/en-US/docs/Web/API/DOMString/Binary)
 ([ByteString](https://developer.mozilla.org/en-US/docs/Web/API/ByteString)) as a header value in Service Worker.
 
-**Use Firefox for this demo.**
+**Use Desktop Firefox for this demo.**
