@@ -13,7 +13,7 @@ self.addEventListener("fetch", function(event) {
     console.log("fetch", event);
     const {request} = event;
 
-    const filename = "123---ファイル---🟦⬜🟥---xxx.txt";
+    const filename = "123---ファイル---💧⚡🔥---xxx.txt";
     if (request.url.includes("xxx-0")) {
         const headers = {
             "content-disposition":
