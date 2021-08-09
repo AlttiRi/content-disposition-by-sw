@@ -2,7 +2,7 @@
 
 
 
-It's the demo site where Service Worker returns a responce with set Content-Disposition header with non ASCII characters for the requests are performed
+It's the demo site where Service Worker returns a responce with set Content-Disposition header with non ASCII characters (`"123---ファイル---💧⚡🔥---xxx.txt"`) for the requests are performed
 on https://alttiri.github.io/content-disposition-by-sw/
 to `./xxx-0`, `./xxx-1`, `./xxx-2` URLs.
 
