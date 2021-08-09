@@ -25,7 +25,7 @@ self.addEventListener("fetch", function(event) {
     if (request.url.includes("xxx-1")) {
         const headers = {
             "content-disposition":
-            stringToBinaryString(`attachment; filename="${filename}"`)
+                stringToBinaryString(`attachment; filename="${filename}"`)
         }
         console.log(byteStringToString(headers["content-disposition"]));
         event.respondWith(new Response("xxx-2", {headers}));
@@ -43,6 +43,8 @@ self.addEventListener("fetch", function(event) {
 /**
  * Use it, or:
  * Uncaught TypeError: Failed to construct 'Response': Value is not a valid ByteString.
+ * (or)
+ * Uncaught TypeError: Failed to execute 'append' on 'Headers': String contains non ISO-8859-1 code point.
  */
 function stringToBinaryString(str) {
     return arrayBufferToBinaryString(new TextEncoder().encode(str));
