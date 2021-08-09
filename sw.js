@@ -40,6 +40,10 @@ self.addEventListener("fetch", function(event) {
     }
 });
 
+/**
+ * Use it, or:
+ * Uncaught TypeError: Failed to construct 'Response': Value is not a valid ByteString.
+ */
 function stringToBinaryString(str) {
     return arrayBufferToBinaryString(new TextEncoder().encode(str));
 }
